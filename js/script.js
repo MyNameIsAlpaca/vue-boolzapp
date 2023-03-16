@@ -176,6 +176,7 @@ createApp({
         return this.contacts[index].messages[1].date[11] + this.contacts[index].messages[1].date[12] + this.contacts[index].messages[1].date[13] + this.contacts[index].messages[1].date[14] + this.contacts[index].messages[1].date[15]
     },
 
+
     changeActiveChat(index) {
         this.activeChat = index;
     },

@@ -58,12 +58,19 @@
                 </div>
                 <div class="nav-right">
                     <div class="header-chat">
-                        <div class="img-container">
-                            <img :src="contacts[activeChat].avatar" alt="">
+                        <div class="header-left">
+                            <div class="img-container">
+                                <img :src="contacts[activeChat].avatar" alt="">
+                            </div>
+                            <div class="contact-info">
+                                <span class="contact-name">{{contacts[activeChat].name}}</span>
+                                <span class="last-seen">Ultimo accesso {{ hourLastMessage(activeChat) }}</span>
+                            </div>
                         </div>
-                        <div class="contact-info">
-                            <span class="contact-name">{{contacts[activeChat].name}}</span>
-                            <span class="last-seen">Ultimo accesso {{ hourLastMessage(activeChat) }}</span>
+                        <div class="header-right">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
                     </div>
                     <div class="main-chat">

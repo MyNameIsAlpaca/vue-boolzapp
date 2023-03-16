@@ -184,6 +184,8 @@ body {
 .main-container .nav-left .contact-container .contact .contact-info .last-message{
     font-size: 0.7em;
     color: gray;
+    overflow: hidden;
+    max-height: 20px ;
 }
 
 .main-container .nav-left .contact-container .contact .hour-last-message {
@@ -197,12 +199,27 @@ body {
     border-radius: 50%;
 }
 
-.nav-right .header-chat{
+.header-chat {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
     height: 70px;
     background-color: #eaeaea;
     border-left: 1px solid rgba(128, 128, 128, 0.623);
+    align-items: center;
+}
+
+.header-chat .header-right {
     display: flex;
+    font-size: 1.3em;
+    gap: 20px;
+    padding-right: 20px;
+    color: gray;
+}
+
+.nav-right .header-left{
+    display: flex;
+    height: 100%;
 }
 
 .nav-right .header-chat .img-container {
@@ -274,6 +291,7 @@ body {
     padding: 12px;
     border-radius: 10px;
     position: relative;
+    padding-right: 20px;
 }
 
 .nav-right .income {
