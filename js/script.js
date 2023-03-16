@@ -168,12 +168,46 @@ createApp({
             },
         ],
         activeChat: 0,
+        newMessage: '',
     }
   },
 
   methods: {
     hourLastMessage(index){
         return this.contacts[index].messages[1].date[11] + this.contacts[index].messages[1].date[12] + this.contacts[index].messages[1].date[13] + this.contacts[index].messages[1].date[14] + this.contacts[index].messages[1].date[15]
+    },
+
+    sendMessage(){
+        if (this.newMessage == '') {
+        } else {
+            
+            this.newMessages =
+            {
+                date: '11/01/2020 15:30:55',
+                message: this.newMessage,
+                status: 'sent'
+            },
+    
+    
+            this.contacts[this.activeChat].messages.push(this.newMessages);
+                
+            this.newMessage = '';
+        }
+        setTimeout(this.responseMessage, 1000);
+    },
+
+    responseMessage(){
+        this.newMessages =
+            {
+                date: '11/01/2020 15:30:55',
+                message: 'ok',
+                status: 'received'
+            },
+    
+    
+            this.contacts[this.activeChat].messages.push(this.newMessages);
+                
+            this.newMessage = '';
     },
 
 
