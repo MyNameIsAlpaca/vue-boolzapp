@@ -3,3 +3,113 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    font-family: sans-serif;
+}
+
+.background {
+    background-color: grey;
+    padding-top: 50px;
+    height: 100vh;
+}
+
+.container {
+    width: 1400px;
+    height: 850px;
+    background-color: darkred;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.container .nav-left {
+    background-color: darkblue;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+.container .nav-right {
+    background-color: darkgreen;
+    width: 70%;
+    height: 100%;
+}
+
+.container .nav-left .user-profile {
+    width: 100%;
+    height: 70px;
+    background-color: #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .nav-left .user-profile .profile-pic-container {
+    width: 80%;
+    height: 80%;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.container .nav-left .user-profile .profile-pic-container span {
+    padding-left: 5px;
+    font-weight: bold;
+}
+
+.container .nav-left .user-profile .profile-pic-container img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+}
+
+.container .nav-left .user-profile .profile-option {
+    display: flex;
+    gap: 20px;
+    padding-right: 10px;
+    color: #b1b1b1;
+    font-size: 1.3em;
+}
+
+.container .nav-left .notification-section {
+    height: 80px;
+    width: 100%;
+    background-color: #8edafc;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    gap: 20px;
+}
+
+.container .nav-left .notification-section i {
+    background-color: white;
+    padding: 10px 7px;
+    border-radius: 50%;
+    color: #8edafc;
+    font-size: 1.3em;
+}
+
+.container .nav-left .search-bar {
+    width: 100%;
+    height: 50px;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .nav-left .contact-container {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+.container .nav-left .contact-container .contact-chat {
+    width: 100%;
+    height: 90px;
+    background-color: white;
+    border: 1px solid gray;
+}
+
