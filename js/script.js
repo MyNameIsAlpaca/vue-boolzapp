@@ -82,7 +82,7 @@ createApp({
                         status: 'sent'
                     },
                     {
-                        date: '10/01/2020 15:50:00',
+                        date: '10/01/2020 14:50:00',
                         message: 'Si, ma preferirei andare al cinema',
                         status: 'received'
                     }
@@ -99,7 +99,7 @@ createApp({
                         status: 'sent'
                     },
                     {
-                        date: '10/01/2020 15:50:00',
+                        date: '10/01/2020 15:21:00',
                         message: 'Va bene, stasera la sento',
                         status: 'received'
                     }
@@ -116,7 +116,7 @@ createApp({
                         status: 'sent'
                     },
                     {
-                        date: '10/01/2020 15:50:00',
+                        date: '10/01/2020 15:53:00',
                         message: 'Non ancora',
                         status: 'received'
                     },
@@ -133,7 +133,7 @@ createApp({
                 visible: true,
                 messages: [
                     {
-                        date: '10/01/2020 15:30:55',
+                        date: '10/01/2020 15:23:55',
                         message: 'Fai gli auguri a Martina che è il suo compleanno!',
                         status: 'sent'
                     },
@@ -155,7 +155,7 @@ createApp({
                         status: 'received'
                     },
                     {
-                        date: '10/01/2020 15:50:00',
+                        date: '10/01/2020 15:52:00',
                         message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
                         status: 'sent'
                     },
@@ -165,13 +165,20 @@ createApp({
                         status: 'received'
                     }
                 ],
-            }
-        ]
-        
+            },
+        ],
+        activeChat: 0,
     }
   },
 
   methods: {
+    hourLastMessage(index){
+        return this.contacts[index].messages[1].date[11] + this.contacts[index].messages[1].date[12] + this.contacts[index].messages[1].date[13] + this.contacts[index].messages[1].date[14] + this.contacts[index].messages[1].date[15]
+    },
+
+    changeActiveChat(index) {
+        this.activeChat = index;
+    },
 },
 
 
