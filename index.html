@@ -66,6 +66,16 @@
                             <span class="last-seen">Ultimo accesso {{ hourLastMessage(activeChat) }}</span>
                         </div>
                     </div>
+                    <div class="main-chat">
+                       <div class="message" v-for="messaggio in contacts[activeChat].messages">
+                        <div :class="messaggio.status == 'sent' ? 'send' : 'income'">{{messaggio.message}} <span class="hour-of-message">{{messaggio.date[11]}}{{messaggio.date[12]}}{{messaggio.date[13]}}{{messaggio.date[14]}}{{messaggio.date[15]}}</span></div>    
+                       </div> 
+                    </div>
+                    <div class="bottom-chat">
+                        <i class="fa-regular fa-face-laugh-beam"></i>
+                        <input type="text" placeholder="Scrivi un messaggio...">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
                 </div>
             </div>
         </div>
