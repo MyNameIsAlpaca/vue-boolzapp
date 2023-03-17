@@ -47,10 +47,10 @@
                                 </div>
                                 <div class="contact-info">
                                     <span class="contact-name">{{contacts[index].name}}</span>
-                                    <span class="last-message">{{contacts[index].messages[1].message}}</span>
+                                    <span class="last-message">{{lastMessage(contact)}}</span>
                                 </div>
                             </div>
-                            <span class="hour-last-message">{{ hourLastMessage(index) }}</span>
+                            <span class="hour-last-message">{{ lastMessageHour(contact) }}</span>
                         </div>
     
                     </div>
@@ -74,9 +74,7 @@
                         </div>
                     </div>
                     <div class="main-chat">
-                       <div class="message" v-for="messaggio in contacts[activeChat].messages">
-                        <div :class="messaggio.status == 'sent' ? 'send' : 'income'">{{messaggio.message}} <span class="hour-of-message">{{messaggio.date[11]}}{{messaggio.date[12]}}{{messaggio.date[13]}}{{messaggio.date[14]}}{{messaggio.date[15]}}</span></div>    
-                       </div> 
+                        <div v-for="messaggio in contacts[activeChat].messages" :class="messaggio.status == 'sent' ? 'send' : 'income'">{{messaggio.message}} <span class="hour-of-message">{{messaggio.date[11]}}{{messaggio.date[12]}}{{messaggio.date[13]}}{{messaggio.date[14]}}{{messaggio.date[15]}}</span></div>     
                     </div>
                     <div class="bottom-chat">
                         <i class="fa-regular fa-face-laugh-beam"></i>

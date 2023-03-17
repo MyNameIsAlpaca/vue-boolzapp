@@ -173,8 +173,8 @@ createApp({
   },
 
   methods: {
-    hourLastMessage(index){
-        return this.contacts[index].messages[1].date[11] + this.contacts[index].messages[1].date[12] + this.contacts[index].messages[1].date[13] + this.contacts[index].messages[1].date[14] + this.contacts[index].messages[1].date[15]
+    hourLastMessage(activeChat){
+        return this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length - 1].date[11] + this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length - 1].date[12] + this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length - 1].date[13] + this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length - 1].date[14] + this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length - 1].date[15]
     },
 
     sendMessage(){
@@ -194,6 +194,16 @@ createApp({
             this.newMessage = '';
         }
         setTimeout(this.responseMessage, 1000);
+    },
+
+    lastMessageHour(contact){
+        return contact.messages[contact.messages.length - 1].date[11] + contact.messages[contact.messages.length - 1].date[12] + contact.messages[contact.messages.length - 1].date[13] + contact.messages[contact.messages.length - 1].date[14] + contact.messages[contact.messages.length - 1].date[15]
+    },
+
+    
+
+    lastMessage(contact){
+        return contact.messages[contact.messages.length - 1].message
     },
 
     responseMessage(){
