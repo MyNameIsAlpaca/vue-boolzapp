@@ -1,3 +1,7 @@
+const DateTime = luxon.DateTime;
+
+let currentTime = DateTime.now().toString('dd/mm/yyyy HH:mm:ss')
+
 const { createApp } = Vue;
 
 createApp({
@@ -183,7 +187,7 @@ createApp({
             
             this.newMessages =
             {
-                date: '11/01/2020 15:30:55',
+                date: currentTime,
                 message: this.newMessage,
                 status: 'sent'
             },
@@ -209,7 +213,7 @@ createApp({
     responseMessage(){
         this.newMessages =
             {
-                date: '11/01/2020 15:30:55',
+                date: currentTime ,
                 message: 'ok',
                 status: 'received'
             },
