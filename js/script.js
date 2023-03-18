@@ -173,6 +173,7 @@ createApp({
         ],
         activeChat: 0,
         newMessage: '',
+        searchMessage: '',
     }
   },
 
@@ -228,6 +229,10 @@ createApp({
     changeActiveChat(index) {
         this.activeChat = index;
     },
+
+    filteredList(contact) {
+        return contact.name.toLowerCase().includes(this.searchMessage.toLowerCase())
+      }
 },
 
 

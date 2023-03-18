@@ -37,10 +37,10 @@
                     </div>
                     <div class="search-bar">
                         <i class="fa fa-search"></i>
-                        <input type="text" class="form-control form-input search-bar" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" v-model="searchMessage" class="form-control form-input search-bar" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <div class="contact-container">
-                        <div v-for="(contact, index) in contacts" class="contact" @click="changeActiveChat(index)" :class="index == activeChat ? 'active' : ''">
+                        <div v-for="(contact, index) in contacts" v-show="filteredList(contact)" class="contact" @click="changeActiveChat(index)" :class="index == activeChat ? 'active' : ''">
                             <div class="contact-name-info">
                                 <div class="img-container">
                                     <img :src="contacts[index].avatar" alt="">
