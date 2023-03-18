@@ -286,8 +286,6 @@ body {
     align-items: start;
 }
 
-
-
 .nav-right .income,
 .nav-right .send {
     padding: 12px;
@@ -316,5 +314,39 @@ body {
     position: absolute;
     right: 5px;
     bottom: 5px;
+}
+
+.nav-right .main-chat .hidden-menu {
+    background-color: white;
+    position: absolute;
+    width: 150px;
+    border: 1px solid #b1b1b1;
+    z-index: 4;
+    right: 0px;
+    top: 20px;
+}
+
+.nav-right .main-chat .hidden-menu .delete-message,
+.nav-right .main-chat .hidden-menu .info-message{
+    background-color: white;
+    width: 100%;
+    padding: 15px;
+    font-size: 0.7em;
+    border: 0;
+}
+
+.menu-open {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    cursor: pointer;
+}
+
+.display-none {
+    display: none;
+}
+
+.display-block {
+    display: block;
 }
 
