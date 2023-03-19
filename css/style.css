@@ -335,6 +335,11 @@ body {
     border: 0;
 }
 
+.nav-right .main-chat .hidden-menu .delete-message:hover,
+.nav-right .main-chat .hidden-menu .info-message:hover{
+    background-color: darkgray;
+}
+
 .menu-open {
     position: absolute;
     right: 2px;
@@ -348,5 +353,9 @@ body {
 
 .display-block {
     display: block;
+}
+
+.nav-right .main-chat .receivedMessage {
+    right: -132px;
 }
 

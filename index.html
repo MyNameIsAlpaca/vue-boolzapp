@@ -43,10 +43,10 @@
                         <div v-for="(contact, index) in contacts" v-show="filteredList(contact)" class="contact" @click="changeActiveChat(index)" :class="index == activeChat ? 'active' : ''">
                             <div class="contact-name-info">
                                 <div class="img-container">
-                                    <img :src="contacts[index].avatar" alt="">
+                                    <img :src="contact.avatar" alt="">
                                 </div>
                                 <div class="contact-info">
-                                    <span class="contact-name">{{contacts[index].name}}</span>
+                                    <span class="contact-name">{{contact.name}}</span>
                                     <span class="last-message">{{lastMessage(contact)}}</span>
                                 </div>
                             </div>
@@ -79,7 +79,7 @@
                                     {{messaggio.date[11]}}{{messaggio.date[12]}}{{messaggio.date[13]}}{{messaggio.date[14]}}{{messaggio.date[15]}}
                                 </span>
                                 <i @click="showOthers(index)" class="fa-solid fa-chevron-down menu-open"></i>
-                                <div :class="contacts[activeChat].messages[index].menu == false ? 'display-none' : 'display-block' " class="hidden-menu" >
+                                <div :class="contacts[activeChat].messages[index].menu == false ? 'display-none' : 'display-block' , contacts[activeChat].messages[index].status == 'received' ? 'receivedMessage' : 'sentMessage' " class="hidden-menu" >
                                     <button @click="deleteMessage(index)" class="delete-message">Cancella messaggio</button>
                                     <button class="info-message">Info messaggio</button>
                                 </div> 

@@ -200,11 +200,11 @@ createApp({
   },
 
   methods: {
-    hourLastMessage(activeChat){
-        if (this.contacts[this.activeChat].messages.length == 0){
-            return '';
-        } else {
+    hourLastMessage(){
+        if (this.contacts[this.activeChat].messages.length != 0){
             return this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length - 1].date[11] + this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length - 1].date[12] + this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length - 1].date[13] + this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length - 1].date[14] + this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length - 1].date[15]
+        } else {
+            return '';
         }
     },
 
@@ -229,20 +229,20 @@ createApp({
     },
 
     lastMessageHour(contact){
-        if (this.contacts[this.activeChat].messages.length == 0){
-            return '';
-        } else {
+        if (contact.messages.length != 0){
             return contact.messages[contact.messages.length - 1].date[11] + contact.messages[contact.messages.length - 1].date[12] + contact.messages[contact.messages.length - 1].date[13] + contact.messages[contact.messages.length - 1].date[14] + contact.messages[contact.messages.length - 1].date[15]
+        } else {
+            return '';
         }
     },
 
     
 
     lastMessage(contact){
-        if (this.contacts[this.activeChat].messages.length == 0){
-            return '';
-        } else {
+        if (contact.messages.length != 0){
             return contact.messages[contact.messages.length - 1].message
+        } else {
+            return '';
         }
         
     },
