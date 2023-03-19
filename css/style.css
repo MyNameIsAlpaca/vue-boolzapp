@@ -4,13 +4,6 @@
     box-sizing: border-box;
 }
 
-#app {
-    background-image: linear-gradient(to bottom,
-        #009688 0%,
-        #009688 15%,
-        #dddbd1 15%,
-        #d2dbdc 100%);
-}
 
 body {
     font-family: sans-serif;
@@ -19,6 +12,11 @@ body {
 .background {
     padding-top: 50px;
     height: 100vh;
+    background-image: linear-gradient(to bottom,
+        #009688 0%,
+        #009688 15%,
+        #dddbd1 15%,
+        #d2dbdc 100%);
 }
 
 .main-container {
