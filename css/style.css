@@ -299,6 +299,11 @@ body {
     padding-right: 20px;
 }
 
+.nav-right .income:hover .menu-open,
+.nav-right .send:hover .menu-open{
+    display: block;
+}
+
 .nav-right .income {
     background-color: white;
     display: flex;
@@ -318,7 +323,7 @@ body {
     color: gray;
     position: absolute;
     right: 5px;
-    bottom: 5px;
+    bottom: 2px;
 }
 
 .nav-right .main-chat .hidden-menu {
@@ -350,7 +355,11 @@ body {
     right: 2px;
     top: 2px;
     cursor: pointer;
+    font-size: 10px;
+    display: none;
 }
+
+
 
 .display-none {
     display: none;

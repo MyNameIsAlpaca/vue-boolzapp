@@ -1,3 +1,5 @@
+//gestore dell'ora 
+
 const DateTime = luxon.DateTime;
 
 let currentTime = DateTime.now().toString('dd/mm/yyyy HH:mm:ss')
@@ -200,6 +202,9 @@ createApp({
   },
 
   methods: {
+
+    //funzione per l'ultimo accesso
+
     hourLastMessage(){
         if (this.contacts[this.activeChat].messages.length != 0){
             return this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length - 1].date[11] + this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length - 1].date[12] + this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length - 1].date[13] + this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length - 1].date[14] + this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length - 1].date[15]
@@ -207,6 +212,8 @@ createApp({
             return '';
         }
     },
+
+    //funzione che genera e attacca alla chat un nuovo messaggio scritto dall'utente
 
     sendMessage(){
         if (this.newMessage == '') {
@@ -228,6 +235,8 @@ createApp({
         setTimeout(this.responseMessage, 1000);
     },
 
+    //funzione che scrive l'ora dell'ultimo messaggio nella lista delle chat
+
     lastMessageHour(contact){
         if (contact.messages.length != 0){
             return contact.messages[contact.messages.length - 1].date[11] + contact.messages[contact.messages.length - 1].date[12] + contact.messages[contact.messages.length - 1].date[13] + contact.messages[contact.messages.length - 1].date[14] + contact.messages[contact.messages.length - 1].date[15]
@@ -236,7 +245,7 @@ createApp({
         }
     },
 
-    
+    //funzione che fa comparire l'ultimo messaggio nella lista delle chat
 
     lastMessage(contact){
         if (contact.messages.length != 0){
@@ -246,6 +255,8 @@ createApp({
         }
         
     },
+
+    //funzione che genera e attacca la risposta ad un nostro messaggio
 
     responseMessage(){
         this.newMessages =
@@ -262,21 +273,29 @@ createApp({
             this.newMessage = '';
     },
 
+    //funzione che ci permette di passare da una chat attiva all'altra
+
 
     changeActiveChat(index) {
         this.activeChat = index;
     },
 
+    //funzione che controlla fa funzionare il tasto cerca confrontando la corrispondenza tra parola inserita dall'utente e nomi dei contatti
+
     filteredList(contact) {
         return contact.name.toLowerCase().includes(this.searchMessage.toLowerCase())
       },
+
+      //funzione che permette il funzionamento del tasto elimina nel menu di ogni messaggio
 
     deleteMessage(index) {
         
         this.contacts[this.activeChat].messages.splice(index,1);
     },
 
-    showOthers(index) {
+    //funzione che ci permette di aprire o chiudere il menu dei messaggi
+
+    openMenu(index) {
         this.contacts[this.activeChat].messages[index].menu = !this.contacts[this.activeChat].messages[index].menu
       },
 },
