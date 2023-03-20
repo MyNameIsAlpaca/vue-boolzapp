@@ -22,7 +22,7 @@
             <div class="main-container">
 
                 <!-- left-section -->
-                <div class="nav-left">
+                <div class="nav-left" @click="chatMenu = true">
 
                     <!-- main-user profile -->
 
@@ -95,13 +95,18 @@
                             </div>
                             <div class="contact-info">
                                 <span class="contact-name">{{contacts[activeChat].name}}</span>
-                                <span class="last-seen">Ultimo accesso {{ hourLastMessage(activeChat) }}</span>
+                                <span class="last-seen">{{ hourLastSeen(activeChat) }}</span>
                             </div>
                         </div>
                         <div class="header-right">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <i class="fa-solid fa-paperclip"></i>
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                            <i @click="chatMenu = !chatMenu" class="fa-solid fa-ellipsis-vertical">
+                                <div class="main-chat-hidden-menu" v-if="chatMenu == false">
+                                    <button @click="deleteAllMessage(), chatMenu = true">Elimina tutti i messaggi</button>
+                                    <button @click="deleteChat(), chatMenu = true">Elimina chat</button>
+                                </div>
+                            </i>
                         </div>
                     </div>
 

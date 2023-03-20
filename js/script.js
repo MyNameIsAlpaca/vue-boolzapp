@@ -195,15 +195,17 @@ createApp({
             },
         ],
 
+        chatMenu: true,
+        
         activeChat: 0,
-
+        
         newMessage: '',
-
+        
         searchMessage: '',
-
+        
         isActive: false,
-
-        randomMessage: ['Va bene', 'Il molise non esiste', 'Per me è la cipolla', 'Anche io ero un programmatore, finchè non mi sono buscato una freccia nel ginocchio', 'The cake is a lie']
+        
+        randomMessage: ['Va bene', 'Il molise non esiste', 'Per me è la cipolla', 'Anche io ero un programmatore, finchè non mi sono buscato una freccia nel ginocchio', 'The cake is a lie'],
     }
   },
 
@@ -211,9 +213,9 @@ createApp({
 
     //funzione per l'ultimo accesso
 
-    hourLastMessage(){
+    hourLastSeen(){
         if (this.contacts[this.activeChat].messages.length != 0){
-            return this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length - 1].date[11] + this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length - 1].date[12] + this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length - 1].date[13] + this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length - 1].date[14] + this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length - 1].date[15]
+            return 'Ultimo accesso:' + this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length - 1].date[11] + this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length - 1].date[12] + this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length - 1].date[13] + this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length - 1].date[14] + this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length - 1].date[15]
         } else {
             return '';
         }
@@ -304,6 +306,15 @@ createApp({
     openMenu(index) {
         this.contacts[this.activeChat].messages[index].menu = !this.contacts[this.activeChat].messages[index].menu
       },
+
+    deleteAllMessage(){
+        this.contacts[this.activeChat].messages.splice(0, this.contacts[this.activeChat].messages.length)
+    },
+
+    deleteChat() {
+        this.activeChat = 0;
+        this.contacts.splice(this.activeChat, 1);
+    },
 },
 
 
