@@ -316,6 +316,17 @@ createApp({
         this.contacts.splice(this.activeChat, 1);
         this.activeChat = null;
     },
+
+    addChat(){
+        newChat = {
+            name: prompt("Aggiungi un contatto"),
+            avatar: 'https://picsum.photos/200',
+            visible: true,
+            messages: [],
+        },
+
+        this.contacts.push(newChat);
+    }
 },
 
 
