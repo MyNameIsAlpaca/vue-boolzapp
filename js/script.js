@@ -195,6 +195,8 @@ createApp({
             },
         ],
 
+        darkMode: false,
+
         chatMenu: true,
         
         activeChat: null,
@@ -318,14 +320,21 @@ createApp({
     },
 
     addChat(){
-        newChat = {
-            name: prompt("Aggiungi un contatto"),
-            avatar: 'https://picsum.photos/200',
-            visible: true,
-            messages: [],
-        },
 
-        this.contacts.push(newChat);
+        let newContact = prompt("Aggiungi un contatto");
+
+        if (newContact == '') {
+            alert("Scrivi un nome")
+        } else {
+            newChat = {
+                name: newContact,
+                avatar: 'https://picsum.photos/200',
+                visible: true,
+                messages: [],
+            }
+            this.contacts.push(newChat);
+        }
+
     }
 },
 

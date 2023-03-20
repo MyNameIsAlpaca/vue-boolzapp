@@ -15,7 +15,7 @@
 
     <div id="app">
         <!-- background-section -->
-        <div class="background">
+        <div class="background" :class="darkMode == true ? 'dark' : ''">
 
             <!-- main-section of page -->
 
@@ -32,7 +32,7 @@
                             <span>Gabriele</span>
                         </div>
                         <div class="profile-option">
-                            <i class="fa-solid fa-circle-notch"></i>
+                            <i @click="darkMode = !darkMode" class="fa-solid fa-circle-notch"></i>
                             <i @click="addChat" class="fa-solid fa-message"></i>
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
@@ -87,7 +87,6 @@
                 <div class="firstImage" v-if="activeChat == null ">
                     <img src="img/emptychat.png" alt="">
                 </div>
-
                 <div v-else class="nav-right">
 
                     <!-- top section of main chat -->
@@ -105,7 +104,7 @@
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <i class="fa-solid fa-paperclip"></i>
                             <i @click="chatMenu = !chatMenu" class="fa-solid fa-ellipsis-vertical">
-                                <div class="main-chat-hidden-menu" v-if="chatMenu == false">
+                                <div class="main-chat-hidden-menu" v-show="chatMenu == false">
                                     <button @click="deleteAllMessage(), chatMenu = true">Elimina tutti i messaggi</button>
                                     <button @click="deleteChat(), chatMenu = true">Elimina chat</button>
                                 </div>
@@ -118,7 +117,7 @@
                     <!-- main-chat section with all message -->
 
                     <div class="main-chat">
-                        <div v-else v-for="(messaggio, index) in contacts[activeChat].messages" :class="messaggio.status == 'sent' ? 'send' : 'income'">{{messaggio.message}}
+                        <div v-for="(messaggio, index) in contacts[activeChat].messages" :class="messaggio.status == 'sent' ? 'send' : 'income'">{{messaggio.message}}
                                 <span class="hour-of-message">
                                     {{messaggio.date[11]}}{{messaggio.date[12]}}{{messaggio.date[13]}}{{messaggio.date[14]}}{{messaggio.date[15]}}
                                 </span>
@@ -139,7 +138,7 @@
                         <input type="text" placeholder="Scrivi un messaggio..." v-model="newMessage" @keyup.enter="sendMessage">
                         <div>
                             <i v-if="newMessage == ''" class="fa-solid fa-microphone"></i>
-                            <i @click="sendMessage" v-else class="fa-solid fa-paper-plane"></i>
+                            <i v-else @click="sendMessage" v-else class="fa-solid fa-paper-plane"></i>
                         </div>
                     </div>
 

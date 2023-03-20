@@ -9,17 +9,18 @@ body {
     font-family: sans-serif;
 }
 
+
 .background {
     padding-top: 50px;
     height: 100vh;
     background-image: linear-gradient(to bottom,
-        #009688 0%,
-        #009688 15%,
-        #dddbd1 15%,
+    #009688 0%,
+    #009688 15%,
+    #dddbd1 15%,
         #d2dbdc 100%);
-}
-
-.main-container {
+    }
+    
+    .main-container {
     width: 80%;
     height: 850px;
     background-color: white;
@@ -348,6 +349,7 @@ body {
     border-radius: 10px;
     position: relative;
     padding-right: 20px;
+    overflow-wrap: break-word;
 }
 
 .nav-right .income:hover .menu-open,
@@ -426,3 +428,53 @@ body {
     right: -132px;
 }
 
+.fa-circle-notch {
+    cursor: pointer;
+}
+
+/* darkmode section */
+
+.dark .main-container .nav-left {
+    background-color: rgb(10, 8, 43);
+}
+
+.dark .main-container .nav-left .user-profile{
+    background-color: rgb(10, 8, 43);
+    color: white;
+}
+
+.dark .main-container .nav-left .search-bar {
+    color: white;
+    background-color: rgb(10, 8, 43);
+}
+
+.dark .main-container .nav-left .contact {
+    color: white;
+    background-color: rgb(10, 8, 43);
+}
+
+.dark .main-container .nav-left .contact:hover {
+    background-color: #062c28;
+}
+
+.dark .main-container .nav-left .contact.active {
+    background-color: #044741;
+}
+
+.dark .nav-right .header-chat {
+    background-color: rgb(10, 8, 43);
+    color: white;
+}
+
+.dark .nav-right .main-chat {
+    background-image: url(../img/backgrounddark.jpg);
+}
+
+.dark .nav-right .bottom-chat {
+    background-color: rgb(10, 8, 43);
+}
+
+.dark .nav-right .bottom-chat input {
+    background-color: rgb(10, 8, 43);
+}
+/* darkmode section */
