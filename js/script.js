@@ -194,10 +194,16 @@ createApp({
                 ],
             },
         ],
+
         activeChat: 0,
+
         newMessage: '',
+
         searchMessage: '',
+
         isActive: false,
+
+        randomMessage: ['Va bene', 'Il molise non esiste', 'Per me è la cipolla', 'Anche io ero un programmatore, finchè non mi sono buscato una freccia nel ginocchio', 'The cake is a lie']
     }
   },
 
@@ -233,6 +239,7 @@ createApp({
             this.newMessage = '';
         }
         setTimeout(this.responseMessage, 1000);
+
     },
 
     //funzione che scrive l'ora dell'ultimo messaggio nella lista delle chat
@@ -262,11 +269,10 @@ createApp({
         this.newMessages =
             {
                 date: currentTime ,
-                message: 'ok',
+                message: this.randomMessage[Math.floor(Math.random() * this.randomMessage.length)],
                 status: 'received',
                 menu: false,
             },
-    
     
             this.contacts[this.activeChat].messages.push(this.newMessages);
                 

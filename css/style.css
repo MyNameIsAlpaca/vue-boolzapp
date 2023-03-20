@@ -269,6 +269,10 @@ body {
     align-items: center;
 }
 
+.nav-right .bottom-chat .fa-paper-plane{
+    cursor: pointer;
+}
+
 .nav-right .bottom-chat input {
     width: 80%;
     height: 70%;
