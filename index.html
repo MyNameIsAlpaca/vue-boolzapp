@@ -84,10 +84,13 @@
                     <!-- right-section -->
 
                 </div>
-                <div class="nav-right">
+                <div class="firstImage" v-if="activeChat == null ">
+                    <img src="img/emptychat.png" alt="">
+                </div>
+
+                <div v-else class="nav-right">
 
                     <!-- top section of main chat -->
-
                     <div class="header-chat">
                         <div class="header-left">
                             <div class="img-container">
@@ -115,7 +118,7 @@
                     <!-- main-chat section with all message -->
 
                     <div class="main-chat">
-                        <div v-for="(messaggio, index) in contacts[activeChat].messages" :class="messaggio.status == 'sent' ? 'send' : 'income'">{{messaggio.message}}
+                        <div v-else v-for="(messaggio, index) in contacts[activeChat].messages" :class="messaggio.status == 'sent' ? 'send' : 'income'">{{messaggio.message}}
                                 <span class="hour-of-message">
                                     {{messaggio.date[11]}}{{messaggio.date[12]}}{{messaggio.date[13]}}{{messaggio.date[14]}}{{messaggio.date[15]}}
                                 </span>

@@ -197,7 +197,7 @@ createApp({
 
         chatMenu: true,
         
-        activeChat: 0,
+        activeChat: null,
         
         newMessage: '',
         
@@ -312,8 +312,9 @@ createApp({
     },
 
     deleteChat() {
-        this.activeChat = 0;
+
         this.contacts.splice(this.activeChat, 1);
+        this.activeChat = null;
     },
 },
 
