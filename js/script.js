@@ -207,7 +207,7 @@ createApp({
         
         isActive: false,
         
-        randomMessage: ['Va bene', 'Il molise non esiste', 'Per me è la cipolla', 'Anche io ero un programmatore, finchè non mi sono buscato una freccia nel ginocchio', 'The cake is a lie'],
+        randomMessage: ['Va bene', 'Il molise non esiste', 'Scusa ora non posso rispondere', 'Anche io ero un programmatore, finchè non mi sono buscato una freccia nel ginocchio', 'The cake is a lie', 'Kuzco e il suo veleno', 'That’s what she said'],
     }
   },
 
@@ -241,8 +241,8 @@ createApp({
             this.contacts[this.activeChat].messages.push(this.newMessages);
                 
             this.newMessage = '';
+            setTimeout(this.responseMessage, 1000);
         }
-        setTimeout(this.responseMessage, 1000);
 
     },
 
