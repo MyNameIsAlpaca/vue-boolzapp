@@ -275,6 +275,11 @@ body {
     height: 100%;
 }
 
+.firstImage{
+    background-image: url(../img/emptychat.png);
+    width: 100%;
+}
+
 .nav-right .header-chat .img-container {
     height: 100%;
     padding-left: 10px;
@@ -476,5 +481,9 @@ body {
 
 .dark .nav-right .bottom-chat input {
     background-color: rgb(10, 8, 43);
+}
+
+.dark .firstImage {
+    background-image: url(../img/emptychatdark.png);
 }
 /* darkmode section */
